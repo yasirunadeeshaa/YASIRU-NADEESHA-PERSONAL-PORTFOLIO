@@ -117,7 +117,7 @@ const AboutMe = () => {
           {/* Left Side - Profile Card */}
           <div className="profile-section">
             <div className="profile-card">
-              <div className="profile-image-wrapper">
+              {/* <div className="profile-image-wrapper">
                 <div className="profile-image">
                   <div className="image-placeholder">
                     <Code2 size={80} />
@@ -127,23 +127,23 @@ const AboutMe = () => {
                   <Zap size={16} />
                   <span>Available for Work</span>
                 </div>
-              </div>
+              </div> */}
 
               <div className="profile-stats">
-                <div className="stat-box">
-                  <Trophy size={24} className="stat-icon" />
-                  <span className="stat-value">50+</span>
-                  <span className="stat-label">Projects Completed</span>
+                <div className="stat-boxx">
+                  <Trophy size={24} className="stat-iconn" />
+                  <span className="stat-valuee">50+</span>
+                  <span className="stat-labell">Projects Completed</span>
                 </div>
-                <div className="stat-box">
-                  <Users size={24} className="stat-icon" />
-                  <span className="stat-value">30+</span>
-                  <span className="stat-label">Happy Clients</span>
+                <div className="stat-boxx">
+                  <Users size={24} className="stat-iconn" />
+                  <span className="stat-valuee">30+</span>
+                  <span className="stat-labell">Happy Clients</span>
                 </div>
-                <div className="stat-box">
-                  <Award size={24} className="stat-icon" />
-                  <span className="stat-value">5+</span>
-                  <span className="stat-label">Years Experience</span>
+                <div className="stat-boxx">
+                  <Award size={24} className="stat-iconn" />
+                  <span className="stat-valuee">5+</span>
+                  <span className="stat-labell">Years Experience</span>
                 </div>
               </div>
 
@@ -324,7 +324,7 @@ const AboutMe = () => {
           min-height: 100vh;
           width: 100%;
           background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-          padding: 120px 40px;
+          padding: 20px 30px;
           position: relative;
           overflow: hidden;
         }
@@ -486,7 +486,7 @@ const AboutMe = () => {
           margin-bottom: 30px;
         }
 
-        .stat-box {
+        .stat-boxx {
           background: rgba(255, 255, 255, 0.05);
           border: 1px solid rgba(255, 255, 255, 0.1);
           border-radius: 16px;
@@ -495,18 +495,18 @@ const AboutMe = () => {
           transition: all 0.3s ease;
         }
 
-        .stat-box:hover {
+        .stat-boxx:hover {
           background: rgba(102, 126, 234, 0.1);
           border-color: rgba(102, 126, 234, 0.3);
           transform: translateY(-5px);
         }
 
-        .stat-icon {
+        .stat-iconn {
           color: #667eea;
           margin-bottom: 10px;
         }
 
-        .stat-value {
+        .stat-valuee {
           display: block;
           font-size: 24px;
           font-weight: 800;
@@ -514,7 +514,7 @@ const AboutMe = () => {
           margin-bottom: 5px;
         }
 
-        .stat-label {
+        .stat-labell {
           display: block;
           font-size: 12px;
           color: #94a3b8;
