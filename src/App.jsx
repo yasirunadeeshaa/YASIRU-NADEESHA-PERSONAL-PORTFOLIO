@@ -1,46 +1,20 @@
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Navigation from './components/Navigation';
-// import Hero from './components/Hero';
-// import MyProject from './components/Project';
-// import AboutMe from './components/AboutMe';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <Router>
-//       <div className="app">
-//         <Navigation />
-//         <section id="/">
-//           <Hero />
-//         </section>
-        
-//         <section id="projects">
-//           <MyProject />
-//         </section>
-        
-//         <section id="contact">
-//           <Contact />
-//         </section>
-//         {/* <Routes>
-//           <Route path="/" element={<Hero />} />
-//           <Route path="/about" element={<AboutMe />} />
-//           <Route path="/projects" element={<MyProject />} />
-//           <Route path="/contact" element={<Contact />} />
-//         </Routes> */}
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;
-
-
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import MyProject from './components/Project';
 import AboutMe from './components/AboutMe';
 import Skill from './components/Skill';
+import Footer from './components/Footer';
+import PortfolioTestimonials from './components/Testimonials';
+import Contact from './components/ContactMe';
+
+import HealthcareProjectDetail from './projects/HealthCareApplication';
+import WeddingProjectDetail from './projects/Wedding';
+import EcommerceDetail from './projects/Ecommerce';
+import StudentManagementDetail from './projects/StudentManagement';
+import TaskManagement from './projects/TaskManagement';
+import AIchat from './projects/AIChat';
+
 import './App.css';
 
 function App() {
@@ -48,23 +22,46 @@ function App() {
     <Router>
       <div className="app">
         <Navigation />
-        
-        <section id="home" >
-          <Hero />
-        </section>
-        
-        <section id="about" >
-          <AboutMe />
-        </section>
-
-        <section id="skills" >
-          <Skill />
-        </section>
-        
-        <section id="projects" >
-          <MyProject />
-        </section>
-        
+        <Routes>
+          {/* Main Portfolio Page */}
+          <Route path="/" element={
+            <>
+              <section id="home">
+                <Hero />
+              </section>
+              <section id="about">
+                <AboutMe />
+              </section>
+              <section id="projects">
+                <MyProject />
+              </section>
+              <section id="skills">
+                <Skill />
+              </section>
+              <section id="testimonials">
+                <PortfolioTestimonials />
+              </section>
+              <section id="contact">
+                <Contact />
+              </section>
+              
+            </>
+          } />
+          
+          {/* Healthcare Project Detail Page */}
+          <Route path="/projects/healthcare" element={<HealthcareProjectDetail />} />
+          {/* Wedding Project Detail Page */}
+          <Route path="/projects/wedding" element={<WeddingProjectDetail />} />
+          {/* E-Commerce Project Detail Page */}
+          <Route path="/projects/ecommerce" element={<EcommerceDetail />} />
+          {/* Student Management Project Detail Page */}
+          <Route path="/projects/student-management" element={<StudentManagementDetail />} />
+          {/* Task Management Project Detail Page */}
+          <Route path="/projects/task-management" element={<TaskManagement />} />
+          {/* AI Chat Project Detail Page */}
+          <Route path="/projects/aichat" element={<AIchat />} />
+        </Routes>
+        <Footer />
       </div>
     </Router>
   );
