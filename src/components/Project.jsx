@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ExternalLink, Github, Play, Sparkles, Code2, Zap, Eye, Star, TrendingUp } from 'lucide-react';
+import health from '../assets/doctor1.jpg';
+import student from '../assets/students.jpg';
+import analyse from '../assets/analyse.jpg';
+import ecommerce from '../assets/e-commerce.avif';
+import wedding from '../assets/wedding.jpg';
 
 const PortfolioProjects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [hoveredProject, setHoveredProject] = useState(null);
+   const navigate = useNavigate();
 
   const projects = [
     {
       id: 1,
       title: "HealthCare Application",
-      category: "web",
       featured: true,
       status: "In Development",
       description: "Advanced healthcare management system with AI-powered diagnostics, patient tracking, and telemedicine capabilities.",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+      image: health,
       tags: ["React", "Node.js", "AI/ML", "PostgreSQL"],
       metrics: {
         users: "10K+",
@@ -24,16 +30,16 @@ const PortfolioProjects = () => {
         live: "#",
         github: "#"
       },
-      color: "from-blue-500 to-cyan-500"
+      color: "pp-gradient-blue-cyan",
+      detailPage: "/projects/healthcare"
     },
     {
       id: 2,
-      title: "E-Commerce Platform",
-      category: "web",
+      title: "Wedding Manage Application",
       featured: true,
       status: "Live",
       description: "Full-featured online marketplace with real-time inventory, payment integration, and advanced analytics dashboard.",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+      image: wedding,
       tags: ["React", "TypeScript", "Stripe", "MongoDB"],
       metrics: {
         users: "25K+",
@@ -44,12 +50,52 @@ const PortfolioProjects = () => {
         live: "#",
         github: "#"
       },
-      color: "from-purple-500 to-pink-500"
+      color: "pp-gradient-purple-pink",
+      detailPage: "/projects/wedding"
     },
     {
       id: 3,
+      title: "E-Commerce Platform",
+      featured: false,
+      status: "Live",
+      description: "Full-featured online marketplace with real-time inventory, payment integration, and advanced analytics dashboard.",
+      image: ecommerce,
+      tags: ["React", "TypeScript", "Stripe", "MongoDB"],
+      metrics: {
+        users: "25K+",
+        rating: "4.8",
+        performance: "95%"
+      },
+      links: {
+        live: "#",
+        github: "#"
+      },
+      color: "pp-gradient-purple-pink",
+      detailPage: "/projects/ecommerce"
+    },
+    {
+      id: 4,
+      title: "Student Management System",
+      featured: false,
+      status: "Live",
+      description: "Full-featured online marketplace with real-time inventory, payment integration, and advanced analytics dashboard.",
+      image: student,
+      tags: ["React", "TypeScript", "Stripe", "MongoDB"],
+      metrics: {
+        users: "25K+",
+        rating: "4.8",
+        performance: "95%"
+      },
+      links: {
+        live: "#",
+        github: "#"
+      },
+      color: "pp-gradient-purple-pink",
+      detailPage: "/projects/student-management"
+    },
+    {
+      id: 5,
       title: "AI Chat Assistant",
-      category: "ai",
       featured: false,
       status: "Live",
       description: "Intelligent conversational AI with natural language processing, context awareness, and multi-language support.",
@@ -64,12 +110,12 @@ const PortfolioProjects = () => {
         live: "#",
         github: "#"
       },
-      color: "from-green-500 to-emerald-500"
+      color: "pp-gradient-green-emerald",
+      detailPage: "/projects/aichat"
     },
     {
-      id: 4,
+      id: 6,
       title: "Portfolio CMS",
-      category: "web",
       featured: false,
       status: "Live",
       description: "Dynamic content management system for creative professionals with drag-and-drop builder and SEO optimization.",
@@ -84,12 +130,11 @@ const PortfolioProjects = () => {
         live: "#",
         github: "#"
       },
-      color: "from-orange-500 to-red-500"
+      color: "pp-gradient-orange-red"
     },
     {
-      id: 5,
+      id: 7,
       title: "Task Management App",
-      category: "mobile",
       featured: false,
       status: "Live",
       description: "Cross-platform productivity app with team collaboration, time tracking, and intelligent task prioritization.",
@@ -104,16 +149,16 @@ const PortfolioProjects = () => {
         live: "#",
         github: "#"
       },
-      color: "from-indigo-500 to-purple-500"
+      color: "pp-gradient-indigo-purple",
+      detailPage: "/projects/task-management"
     },
     {
-      id: 6,
+      id: 8,
       title: "Analytics Dashboard",
-      category: "web",
       featured: false,
       status: "Live",
       description: "Real-time business intelligence platform with customizable widgets, data visualization, and reporting tools.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      image: analyse,
       tags: ["Vue.js", "D3.js", "Node.js", "Redis"],
       metrics: {
         users: "12K+",
@@ -124,7 +169,7 @@ const PortfolioProjects = () => {
         live: "#",
         github: "#"
       },
-      color: "from-yellow-500 to-orange-500"
+      color: "pp-gradient-yellow-orange"
     }
   ];
 
@@ -142,82 +187,73 @@ const PortfolioProjects = () => {
     return project.category === activeFilter;
   });
 
-  return (
-    <section className="projects-section">
-      {/* Background Elements */}
-      <div className="bg-gradient-blur blur-1"></div>
-      <div className="bg-gradient-blur blur-2"></div>
-      <div className="bg-gradient-blur blur-3"></div>
+  const handleViewProject = (project) => {
+    if (project.detailPage) {
+      navigate(project.detailPage);
+    }
+  };
 
-      <div className="projects-container">
+  return (
+    <section className="pp-projects-section">
+      {/* Background Elements */}
+      <div className="pp-bg-gradient-blur pp-blur-1"></div>
+      <div className="pp-bg-gradient-blur pp-blur-2"></div>
+      <div className="pp-bg-gradient-blur pp-blur-3"></div>
+
+      <div className="pp-projects-container">
         {/* Section Header */}
-        <div className="section-header">
-          <div className="header-badge">
+        <div className="pp-section-header">
+          <div className="pp-header-badge">
             <Sparkles size={18} />
             <span>Portfolio Showcase</span>
           </div>
-          <h2 className="section-title">
-            Featured <span className="title-gradient">Projects</span>
+          <h2 className="pp-section-title">
+            Featured <span className="pp-title-gradient">Projects</span>
           </h2>
-          <p className="section-description">
+          <p className="pp-section-description">
             Explore my collection of innovative solutions and creative experiments. 
             Each project represents a unique challenge and a commitment to excellence.
           </p>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="filter-container">
-          {filters.map(filter => (
-            <button
-              key={filter.id}
-              className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
-              onClick={() => setActiveFilter(filter.id)}
-            >
-              <span>{filter.label}</span>
-              <span className="filter-count">{filter.count}</span>
-            </button>
-          ))}
-        </div>
-
         {/* Projects Grid */}
-        <div className="projects-grid">
+        <div className="pp-projects-grid">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className={`project-card ${project.featured ? 'featured-card' : ''}`}
+              className={`pp-project-card ${project.featured ? 'pp-featured-card' : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Status Badge */}
-              <div className="status-badge-container">
+              <div className="pp-status-badge-container">
                 {project.featured && (
-                  <span className="featured-badge">
+                  <span className="pp-featured-badge">
                     <Star size={14} />
                     Featured
                   </span>
                 )}
-                <span className={`status-badge ${project.status === 'Live' ? 'live' : 'development'}`}>
-                  <div className="status-dot"></div>
-                  {project.status}
-                </span>
               </div>
 
               {/* Project Image */}
-              <div className="project-image-container">
-                <img src={project.image} alt={project.title} className="project-image" />
-                <div className={`image-overlay ${hoveredProject === project.id ? 'active' : ''}`}>
-                  <div className="overlay-gradient"></div>
-                  <div className="overlay-actions">
-                    <button className="overlay-btn primary">
+              <div className="pp-project-image-container">
+                <img src={project.image} alt={project.title} className="pp-project-image" />
+                <div className={`pp-image-overlay ${hoveredProject === project.id ? 'pp-active' : ''}`}>
+                  <div className="pp-overlay-gradient"></div>
+                  <div className="pp-overlay-actions">
+                    <button 
+                      className="pp-overlay-btn pp-primary"
+                      onClick={() => handleViewProject(project)}
+                    >
                       <Eye size={18} />
                       <span>View Project</span>
                     </button>
-                    <div className="overlay-icon-btns">
-                      <button className="overlay-icon-btn">
+                    <div className="pp-overlay-icon-btns">
+                      <button className="pp-overlay-icon-btn">
                         <ExternalLink size={18} />
                       </button>
-                      <button className="overlay-icon-btn">
+                      <button className="pp-overlay-icon-btn">
                         <Github size={18} />
                       </button>
                     </div>
@@ -226,66 +262,69 @@ const PortfolioProjects = () => {
               </div>
 
               {/* Project Content */}
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
+              <div className="pp-project-content">
+                <h3 className="pp-project-title">{project.title}</h3>
+                <p className="pp-project-description">{project.description}</p>
 
                 {/* Metrics */}
-                <div className="project-metrics">
-                  <div className="metric-item">
-                    <TrendingUp size={16} className="metric-icon" />
-                    <span className="metric-label">Users:</span>
-                    <span className="metric-value">{project.metrics.users}</span>
+                <div className="pp-project-metrics">
+                  <div className="pp-metric-item">
+                    <TrendingUp size={16} className="pp-metric-icon" />
+                    <span className="pp-metric-label">Users:</span>
+                    <span className="pp-metric-value">{project.metrics.users}</span>
                   </div>
-                  <div className="metric-item">
-                    <Star size={16} className="metric-icon" />
-                    <span className="metric-label">Rating:</span>
-                    <span className="metric-value">{project.metrics.rating}</span>
+                  <div className="pp-metric-item">
+                    <Star size={16} className="pp-metric-icon" />
+                    <span className="pp-metric-label">Rating:</span>
+                    <span className="pp-metric-value">{project.metrics.rating}</span>
                   </div>
-                  <div className="metric-item">
-                    <Zap size={16} className="metric-icon" />
-                    <span className="metric-label">Performance:</span>
-                    <span className="metric-value">{project.metrics.performance}</span>
+                  <div className="pp-metric-item">
+                    <Zap size={16} className="pp-metric-icon" />
+                    <span className="pp-metric-label">Performance:</span>
+                    <span className="pp-metric-value">{project.metrics.performance}</span>
                   </div>
                 </div>
 
                 {/* Tags */}
-                <div className="project-tags">
+                <div className="pp-project-tags">
                   {project.tags.map(tag => (
-                    <span key={tag} className="project-tag">{tag}</span>
+                    <span key={tag} className="pp-project-tag">{tag}</span>
                   ))}
                 </div>
 
                 {/* Actions */}
-                <div className="project-actions">
-                  <button className="action-btn primary">
+                <div className="pp-project-actions">
+                  <button 
+                    className="pp-action-btn pp-primary"
+                    onClick={() => handleViewProject(project)}
+                  >
                     <Play size={18} />
                     <span>View Project</span>
                   </button>
-                  <button className="action-btn secondary">
+                  <button className="pp-action-btn pp-secondary">
                     <Code2 size={18} />
                   </button>
                 </div>
               </div>
 
               {/* Decorative Border */}
-              <div className={`card-border-gradient bg-gradient-to-r ${project.color}`}></div>
+              <div className={`pp-card-border-gradient ${project.color}`}></div>
             </div>
           ))}
         </div>
       </div>
 
       <style>{`
-        .projects-section {
+        .pp-projects-section {
           position: relative;
           min-height: 100vh;
-          padding: 10px 0;
+          padding: 100px 0;
           background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
           overflow: hidden;
         }
 
         /* Background Blur Elements */
-        .bg-gradient-blur {
+        .pp-bg-gradient-blur {
           position: absolute;
           border-radius: 50%;
           filter: blur(100px);
@@ -293,54 +332,54 @@ const PortfolioProjects = () => {
           pointer-events: none;
         }
 
-        .blur-1 {
+        .pp-blur-1 {
           width: 500px;
           height: 500px;
           background: radial-gradient(circle, rgba(102, 126, 234, 0.4), transparent);
           top: 10%;
           left: 5%;
-          animation: float-blur 20s ease-in-out infinite;
+          animation: pp-float-blur 20s ease-in-out infinite;
         }
 
-        .blur-2 {
+        .pp-blur-2 {
           width: 600px;
           height: 600px;
           background: radial-gradient(circle, rgba(118, 75, 162, 0.3), transparent);
           top: 50%;
           right: 10%;
-          animation: float-blur 25s ease-in-out infinite reverse;
+          animation: pp-float-blur 25s ease-in-out infinite reverse;
         }
 
-        .blur-3 {
+        .pp-blur-3 {
           width: 400px;
           height: 400px;
           background: radial-gradient(circle, rgba(251, 146, 60, 0.2), transparent);
           bottom: 10%;
           left: 40%;
-          animation: float-blur 30s ease-in-out infinite;
+          animation: pp-float-blur 30s ease-in-out infinite;
         }
 
-        @keyframes float-blur {
+        @keyframes pp-float-blur {
           0%, 100% { transform: translate(0, 0); }
           33% { transform: translate(50px, -50px); }
           66% { transform: translate(-30px, 30px); }
         }
 
-        .projects-container {
+        .pp-projects-container {
           position: relative;
           z-index: 2;
           margin: 0 auto;
-          padding: 0 40px;
+          padding: 0 60px;
         }
 
         /* Section Header */
-        .section-header {
+        .pp-section-header {
           text-align: center;
           margin-bottom: 80px;
-          animation: fadeInUp 0.8s ease-out;
+          animation: pp-fadeInUp 0.8s ease-out;
         }
 
-        @keyframes fadeInUp {
+        @keyframes pp-fadeInUp {
           from {
             opacity: 0;
             transform: translateY(30px);
@@ -351,7 +390,7 @@ const PortfolioProjects = () => {
           }
         }
 
-        .header-badge {
+        .pp-header-badge {
           display: inline-flex;
           align-items: center;
           gap: 10px;
@@ -366,7 +405,7 @@ const PortfolioProjects = () => {
           backdrop-filter: blur(10px);
         }
 
-        .section-title {
+        .pp-section-title {
           font-size: 56px;
           font-weight: 900;
           color: white;
@@ -374,14 +413,14 @@ const PortfolioProjects = () => {
           line-height: 1.2;
         }
 
-        .title-gradient {
+        .pp-title-gradient {
           background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
 
-        .section-description {
+        .pp-section-description {
           font-size: 18px;
           color: #cbd5e1;
           max-width: 700px;
@@ -389,64 +428,16 @@ const PortfolioProjects = () => {
           line-height: 1.8;
         }
 
-        /* Filter Tabs */
-        .filter-container {
-          display: flex;
-          justify-content: center;
-          gap: 16px;
-          margin-bottom: 60px;
-          flex-wrap: wrap;
-          animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        .filter-btn {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          padding: 14px 28px;
-          background: rgba(255, 255, 255, 0.05);
-          border: 2px solid rgba(255, 255, 255, 0.1);
-          border-radius: 50px;
-          color: #cbd5e1;
-          font-size: 15px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          backdrop-filter: blur(10px);
-        }
-
-        .filter-btn:hover {
-          background: rgba(255, 255, 255, 0.08);
-          border-color: rgba(102, 126, 234, 0.4);
-          transform: translateY(-2px);
-        }
-
-        .filter-btn.active {
-          background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
-          border-color: rgba(102, 126, 234, 0.5);
-          color: white;
-        }
-
-        .filter-count {
-          padding: 4px 10px;
-          background: rgba(255, 255, 255, 0.15);
-          border-radius: 20px;
-          font-size: 13px;
-        }
-
-        .filter-btn.active .filter-count {
-          background: rgba(255, 255, 255, 0.25);
-        }
 
         /* Projects Grid */
-        .projects-grid {
+        .pp-projects-grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
-          gap: 40px;
-          margin-bottom: 80px;
+          gap: 20px;
+          margin-bottom: 10px;
         }
 
-        .project-card {
+        .pp-project-card {
           position: relative;
           background: rgba(17, 24, 39, 0.6);
           border: 1px solid rgba(255, 255, 255, 0.1);
@@ -454,10 +445,10 @@ const PortfolioProjects = () => {
           overflow: hidden;
           backdrop-filter: blur(20px);
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          animation: cardFadeIn 0.6s ease-out both;
+          animation: pp-cardFadeIn 0.6s ease-out both;
         }
 
-        @keyframes cardFadeIn {
+        @keyframes pp-cardFadeIn {
           from {
             opacity: 0;
             transform: translateY(30px);
@@ -468,18 +459,18 @@ const PortfolioProjects = () => {
           }
         }
 
-        .project-card:hover {
+        .pp-project-card:hover {
           transform: translateY(-8px);
           border-color: rgba(102, 126, 234, 0.3);
           box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
         }
 
-        .featured-card {
+        .pp-featured-card {
           grid-column: span 1;
         }
 
         /* Status Badges */
-        .status-badge-container {
+        .pp-status-badge-container {
           position: absolute;
           top: 20px;
           left: 20px;
@@ -490,7 +481,7 @@ const PortfolioProjects = () => {
           z-index: 3;
         }
 
-        .featured-badge {
+        .pp-featured-badge {
           display: flex;
           align-items: center;
           gap: 6px;
@@ -504,7 +495,7 @@ const PortfolioProjects = () => {
           backdrop-filter: blur(10px);
         }
 
-        .status-badge {
+        .pp-status-badge {
           display: flex;
           align-items: center;
           gap: 8px;
@@ -515,51 +506,51 @@ const PortfolioProjects = () => {
           backdrop-filter: blur(10px);
         }
 
-        .status-badge.live {
+        .pp-status-badge.pp-live {
           background: rgba(34, 197, 94, 0.2);
           border: 1px solid rgba(34, 197, 94, 0.4);
           color: #86efac;
         }
 
-        .status-badge.development {
+        .pp-status-badge.pp-development {
           background: rgba(59, 130, 246, 0.2);
           border: 1px solid rgba(59, 130, 246, 0.4);
           color: #93c5fd;
         }
 
-        .status-dot {
+        .pp-status-dot {
           width: 6px;
           height: 6px;
           border-radius: 50%;
           background: currentColor;
-          animation: pulse-dot 2s ease-in-out infinite;
+          animation: pp-pulse-dot 2s ease-in-out infinite;
         }
 
-        @keyframes pulse-dot {
+        @keyframes pp-pulse-dot {
           0%, 100% { opacity: 1; transform: scale(1); }
           50% { opacity: 0.5; transform: scale(1.2); }
         }
 
         /* Project Image */
-        .project-image-container {
+        .pp-project-image-container {
           position: relative;
           width: 100%;
           height: 280px;
           overflow: hidden;
         }
 
-        .project-image {
+        .pp-project-image {
           width: 100%;
           height: 100%;
           object-fit: cover;
           transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .project-card:hover .project-image {
+        .pp-project-card:hover .pp-project-image {
           transform: scale(1.1);
         }
 
-        .image-overlay {
+        .pp-image-overlay {
           position: absolute;
           top: 0;
           left: 0;
@@ -572,11 +563,11 @@ const PortfolioProjects = () => {
           justify-content: center;
         }
 
-        .image-overlay.active {
+        .pp-image-overlay.pp-active {
           opacity: 1;
         }
 
-        .overlay-gradient {
+        .pp-overlay-gradient {
           position: absolute;
           top: 0;
           left: 0;
@@ -585,7 +576,7 @@ const PortfolioProjects = () => {
           background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
         }
 
-        .overlay-actions {
+        .pp-overlay-actions {
           position: relative;
           z-index: 2;
           display: flex;
@@ -594,7 +585,7 @@ const PortfolioProjects = () => {
           align-items: center;
         }
 
-        .overlay-btn {
+        .pp-overlay-btn {
           display: flex;
           align-items: center;
           gap: 10px;
@@ -609,17 +600,17 @@ const PortfolioProjects = () => {
           transition: all 0.3s ease;
         }
 
-        .overlay-btn:hover {
+        .pp-overlay-btn:hover {
           transform: scale(1.05);
           box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
         }
 
-        .overlay-icon-btns {
+        .pp-overlay-icon-btns {
           display: flex;
           gap: 12px;
         }
 
-        .overlay-icon-btn {
+        .pp-overlay-icon-btn {
           width: 48px;
           height: 48px;
           display: flex;
@@ -634,18 +625,18 @@ const PortfolioProjects = () => {
           backdrop-filter: blur(10px);
         }
 
-        .overlay-icon-btn:hover {
+        .pp-overlay-icon-btn:hover {
           background: white;
           color: #667eea;
           transform: scale(1.1);
         }
 
         /* Project Content */
-        .project-content {
+        .pp-project-content {
           padding: 30px;
         }
 
-        .project-title {
+        .pp-project-title {
           font-size: 24px;
           font-weight: 800;
           color: white;
@@ -653,7 +644,7 @@ const PortfolioProjects = () => {
           line-height: 1.3;
         }
 
-        .project-description {
+        .pp-project-description {
           font-size: 15px;
           color: #94a3b8;
           line-height: 1.7;
@@ -661,7 +652,7 @@ const PortfolioProjects = () => {
         }
 
         /* Metrics */
-        .project-metrics {
+        .pp-project-metrics {
           display: flex;
           gap: 20px;
           padding: 16px 0;
@@ -670,35 +661,35 @@ const PortfolioProjects = () => {
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .metric-item {
+        .pp-metric-item {
           display: flex;
           align-items: center;
           gap: 6px;
           font-size: 13px;
         }
 
-        .metric-icon {
+        .pp-metric-icon {
           color: #667eea;
         }
 
-        .metric-label {
+        .pp-metric-label {
           color: #64748b;
         }
 
-        .metric-value {
+        .pp-metric-value {
           color: white;
           font-weight: 700;
         }
 
         /* Tags */
-        .project-tags {
+        .pp-project-tags {
           display: flex;
           flex-wrap: wrap;
           gap: 8px;
           margin-bottom: 24px;
         }
 
-        .project-tag {
+        .pp-project-tag {
           padding: 6px 14px;
           background: rgba(102, 126, 234, 0.15);
           border: 1px solid rgba(102, 126, 234, 0.3);
@@ -709,12 +700,12 @@ const PortfolioProjects = () => {
         }
 
         /* Actions */
-        .project-actions {
+        .pp-project-actions {
           display: flex;
           gap: 12px;
         }
 
-        .action-btn {
+        .pp-action-btn {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -728,18 +719,18 @@ const PortfolioProjects = () => {
           transition: all 0.3s ease;
         }
 
-        .action-btn.primary {
+        .pp-action-btn.pp-primary {
           flex: 1;
           background: linear-gradient(135deg, #667eea, #764ba2);
           color: white;
         }
 
-        .action-btn.primary:hover {
+        .pp-action-btn.pp-primary:hover {
           transform: translateY(-2px);
           box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
 
-        .action-btn.secondary {
+        .pp-action-btn.pp-secondary {
           width: 52px;
           padding: 14px;
           background: rgba(255, 255, 255, 0.08);
@@ -747,12 +738,12 @@ const PortfolioProjects = () => {
           color: white;
         }
 
-        .action-btn.secondary:hover {
+        .pp-action-btn.pp-secondary:hover {
           background: rgba(255, 255, 255, 0.12);
         }
 
         /* Card Border Gradient */
-        .card-border-gradient {
+        .pp-card-border-gradient {
           position: absolute;
           bottom: 0;
           left: 0;
@@ -762,100 +753,79 @@ const PortfolioProjects = () => {
           transition: opacity 0.4s ease;
         }
 
-        .project-card:hover .card-border-gradient {
+        .pp-gradient-blue-cyan {
+          background: linear-gradient(to right, #3b82f6, #06b6d4);
+        }
+
+        .pp-gradient-purple-pink {
+          background: linear-gradient(to right, #a855f7, #ec4899);
+        }
+
+        .pp-gradient-green-emerald {
+          background: linear-gradient(to right, #10b981, #059669);
+        }
+
+        .pp-gradient-orange-red {
+          background: linear-gradient(to right, #f97316, #ef4444);
+        }
+
+        .pp-gradient-indigo-purple {
+          background: linear-gradient(to right, #6366f1, #a855f7);
+        }
+
+        .pp-gradient-yellow-orange {
+          background: linear-gradient(to right, #eab308, #f97316);
+        }
+
+        .pp-project-card:hover .pp-card-border-gradient {
           opacity: 1;
-        }
-
-        /* View More Section */
-        .view-more-section {
-          text-align: center;
-          padding: 60px 0;
-          animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-
-        .view-more-text {
-          font-size: 18px;
-          color: #cbd5e1;
-          margin-bottom: 24px;
-        }
-
-        .view-more-btn {
-          position: relative;
-          display: inline-flex;
-          align-items: center;
-          gap: 12px;
-          padding: 18px 40px;
-          background: linear-gradient(135deg, #667eea, #764ba2);
-          border: none;
-          border-radius: 50px;
-          color: white;
-          font-size: 16px;
-          font-weight: 700;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          overflow: hidden;
-        }
-
-        .view-more-btn:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 20px 50px rgba(102, 126, 234, 0.5);
-        }
-
-        .btn-glow {
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-          transition: left 0.5s;
-        }
-
-        .view-more-btn:hover .btn-glow {
-          left: 100%;
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
-          .projects-grid {
+          .pp-projects-grid {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
           }
 
-          .section-title {
+          .pp-section-title {
             font-size: 42px;
+          }
+
+          .pp-projects-container {
+            padding: 0 40px;
           }
         }
 
         @media (max-width: 768px) {
-          .projects-container {
+          .pp-projects-container {
             padding: 0 20px;
           }
 
-          .section-title {
+          .pp-section-title {
             font-size: 36px;
           }
 
-          .projects-grid {
+          .pp-projects-grid {
             grid-template-columns: 1fr;
             gap: 24px;
           }
 
-          .filter-container {
+          .pp-filter-container {
             gap: 10px;
           }
 
-          .filter-btn {
+          .pp-filter-btn {
             padding: 12px 20px;
             font-size: 14px;
           }
 
-          .project-metrics {
+          .pp-project-metrics {
             flex-wrap: wrap;
             gap: 12px;
           }
 
-          .featured-card {
+          .pp-featured-card {
             grid-column: span 1;
           }
         }
