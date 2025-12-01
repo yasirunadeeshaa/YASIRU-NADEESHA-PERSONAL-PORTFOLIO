@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import { ArrowRight, Github, Linkedin, Mail, Code2, Sparkles, Terminal, Zap, Download, ExternalLink } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Code2, Sparkles, Terminal, Zap, Download, ExternalLink, Briefcase } from 'lucide-react';
+import Fiverr from '../assets/fiverr.png';
+import Upwork from '../assets/upwok2.png';
 
 const PortfolioHero = () => {
   const canvasRef = useRef(null);
@@ -55,7 +57,6 @@ const PortfolioHero = () => {
         particle.draw();
       });
 
-      // Connect particles
       particles.forEach((a, i) => {
         particles.slice(i + 1).forEach(b => {
           const dx = a.x - b.x;
@@ -88,194 +89,205 @@ const PortfolioHero = () => {
   }, []);
 
   return (
-    <section className="portfolio-hero">
-      <canvas ref={canvasRef} className="hero-canvas" />
+    <section className="ph-portfolio-hero">
+      <canvas ref={canvasRef} className="ph-hero-canvas" />
       
-      <div className="hero-container">
-        <div className="hero-grid">
+      <div className="ph-hero-container">
+        <div className="ph-hero-grid">
           {/* Left Content */}
-          <div className="hero-left">
+          <div className="ph-hero-left">
             {/* Status Badge */}
-            <div className="badge-group">
-              <span className="status-badge">
-                <Sparkles size={16} className="badge-icon" />
+            <div className="ph-badge-group">
+              <span className="ph-status-badge">
+                <Sparkles size={16} className="ph-badge-icon" />
                 Available for Opportunities
               </span>
-              <span className="verified-badge">
+              <span className="ph-verified-badge">
                 <Zap size={16} />
-                Verified Developer
+                Developer
+              </span>
+              <span className="ph-freelancer-badge">
+                <Briefcase size={16} />
+                Freelancer
               </span>
             </div>
 
             {/* Main Content */}
-            <div className="hero-main-content">
-              <p className="hero-greeting">Hello, I'm</p>
-              <h1 className="hero-name">
-                <span className="name-text">A.Yasiru Nadeesha Aththanayaka</span>
-                <span className="cursor-blink">|</span>
+            <div className="ph-hero-main-content">
+              <p className="ph-hero-greeting">Hello, I'm</p>
+              <h1 className="ph-hero-name">
+                <span className="ph-name-text">A.Yasiru Nadeesha Aththanayaka</span>
+                <span className="ph-cursor-blink">|</span>
               </h1>
-              <h2 className="hero-title">
+              <h2 className="ph-hero-title">
                 Full Stack
-                <span className="gradient-text"> Developer</span>
+                <span className="ph-gradient-text"> Developer</span>
               </h2>
 
-              <p className="hero-description">
+              <p className="ph-hero-description">
                 Crafting exceptional digital experiences through elegant code and innovative solutions. 
                 Specialized in building scalable web applications with modern technologies.
               </p>
 
               {/* Stats */}
-              <div className="hero-stats">
-                <div className="stat-item">
-                  <span className="stat-number">50+</span>
-                  <span className="stat-label">Projects</span>
+              <div className="ph-hero-stats">
+                <div className="ph-stat-item">
+                  <span className="ph-stat-number">20+</span>
+                  <span className="ph-stat-label">Projects</span>
                 </div>
-                <div className="stat-item">
-                  <span className="stat-number">5+</span>
-                  <span className="stat-label">Years Exp</span>
+                <div className="ph-stat-item">
+                  <span className="ph-stat-number">5+</span>
+                  <span className="ph-stat-label">Years Exp</span>
                 </div>
-                <div className="stat-item">
-                  <span className="stat-number">98%</span>
-                  <span className="stat-label">Satisfaction</span>
+                <div className="ph-stat-item">
+                  <span className="ph-stat-number">98%</span>
+                  <span className="ph-stat-label">Satisfaction</span>
                 </div>
               </div>
 
               {/* CTA Buttons */}
-              <div className="hero-cta">
-                <button className="btn-primary">
+              <div className="ph-hero-cta">
+                <button className="ph-btn-primary">
                   <span>View My Work</span>
-                  <ArrowRight size={20} className="btn-icon" />
-                  <div className="btn-shine"></div>
+                  <ArrowRight size={20} className="ph-btn-icon" />
+                  <div className="ph-btn-shine"></div>
                 </button>
-                <button className="btn-secondary">
+                <button className="ph-btn-secondary">
                   <Download size={20} />
                   <span>Download CV</span>
                 </button>
               </div>
 
               {/* Social Links */}
-              <div className="social-links">
-                <a href="https://github.com" className="social-link" aria-label="GitHub">
+              <div className="ph-social-links">
+                <a href="https://github.com/yasirunadeeshaa" className="ph-social-link" aria-label="GitHub">
                   <Github size={20} />
                 </a>
-                <a href="https://linkedin.com" className="social-link" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/yasiru-nadeesha-aththanayaka/" className="ph-social-link" aria-label="LinkedIn">
                   <Linkedin size={20} />
                 </a>
-                <a href="mailto:your.email@example.com" className="social-link" aria-label="Email">
+                <a href="mailto:your.a.y.n.aththanayaka@gmail.com" className="ph-social-link" aria-label="Email">
                   <Mail size={20} />
+                </a>
+                <a href="https://www.fiverr.com/s/5r9pj1z" className="ph-social-link ph-fiverr-link" aria-label="Fiverr">
+                  <img src={Fiverr} alt="Fiverr" className="ph-fiverr-icon" />
+                </a>
+                <a href="https://www.upwork.com/freelancers/~01179d06700874ce52?mp_source=share" className="ph-social-link ph-fiverr-link" aria-label="Upwork">
+                  <img src={Upwork} alt="Upwork" className="ph-fiverr-icon" />
                 </a>
               </div>
             </div>
           </div>
 
           {/* Right Visual */}
-          <div className="hero-right">
-            <div className="visual-container">
+          <div className="ph-hero-right">
+            <div className="ph-visual-container">
               {/* Main Code Card */}
-              <div className="code-card main-card">
-                <div className="card-header">
-                  <div className="terminal-dots">
-                    <span className="dot dot-red"></span>
-                    <span className="dot dot-yellow"></span>
-                    <span className="dot dot-green"></span>
+              <div className="ph-code-card ph-main-card">
+                <div className="ph-card-header">
+                  <div className="ph-terminal-dots">
+                    <span className="ph-dot ph-dot-red"></span>
+                    <span className="ph-dot ph-dot-yellow"></span>
+                    <span className="ph-dot ph-dot-green"></span>
                   </div>
-                  <span className="file-name">developer.js</span>
+                  <span className="ph-file-name">developer.js</span>
                 </div>
-                <div className="card-body">
-                  <div className="code-line">
-                    <span className="line-number">1</span>
-                    <span className="code-keyword">const</span>{' '}
-                    <span className="code-variable">developer</span> = {'{'}
+                <div className="ph-card-body">
+                  <div className="ph-code-line">
+                    <span className="ph-line-number">1</span>
+                    <span className="ph-code-keyword">const</span>{' '}
+                    <span className="ph-code-variable">developer</span> = {'{'}
                   </div>
-                  <div className="code-line">
-                    <span className="line-number">2</span>
-                    <span className="indent">name: </span>
-                    <span className="code-string">'Your Name'</span>,
+                  <div className="ph-code-line">
+                    <span className="ph-line-number">2</span>
+                    <span className="ph-indent">name: </span>
+                    <span className="ph-code-string">'Your Name'</span>,
                   </div>
-                  <div className="code-line">
-                    <span className="line-number">3</span>
-                    <span className="indent">role: </span>
-                    <span className="code-string">'Full Stack Developer'</span>,
+                  <div className="ph-code-line">
+                    <span className="ph-line-number">3</span>
+                    <span className="ph-indent">role: </span>
+                    <span className="ph-code-string">'Full Stack Developer'</span>,
                   </div>
-                  <div className="code-line">
-                    <span className="line-number">4</span>
-                    <span className="indent">skills: [</span>
-                    <span className="code-string">'React'</span>,{' '}
-                    <span className="code-string">'Node.js'</span>],
+                  <div className="ph-code-line">
+                    <span className="ph-line-number">4</span>
+                    <span className="ph-indent">skills: [</span>
+                    <span className="ph-code-string">'React'</span>,{' '}
+                    <span className="ph-code-string">'Node.js'</span>],
                   </div>
-                  <div className="code-line">
-                    <span className="line-number">5</span>
-                    <span className="indent">passion: </span>
-                    <span className="code-string">'Building Amazing Things'</span>
+                  <div className="ph-code-line">
+                    <span className="ph-line-number">5</span>
+                    <span className="ph-indent">passion: </span>
+                    <span className="ph-code-string">'Building Amazing Things'</span>
                   </div>
-                  <div className="code-line">
-                    <span className="line-number">6</span>
+                  <div className="ph-code-line">
+                    <span className="ph-line-number">6</span>
                     {'};'}
                   </div>
                 </div>
               </div>
 
               {/* Floating Cards */}
-              <div className="floating-cards">
-                {/* Achievement Card */}
-                <div className="float-card CurrentWorking-card">
-                  <Sparkles size={20} className="card-icon" />
-                  <div className="card-content">
+              <div className="ph-floating-cards">
+                {/* Currently Working Card */}
+                <div className="ph-float-card ph-current-working-card">
+                  <Sparkles size={20} className="ph-card-icon" />
+                  <div className="ph-card-content">
                     <h4>Currently Working On</h4>
                     <p>HealthCare Application</p>
-                    <span className="CurrentWorking-badge">Final Year Project</span>
+                    <span className="ph-current-working-badge">Final Year Project</span>
                   </div>
                 </div>
+
                 {/* Tech Stack Card */}
-                <div className="float-card tech-card">
-                  <Code2 size={20} className="card-icon" />
-                  <div className="card-content">
+                <div className="ph-float-card ph-tech-card">
+                  <Code2 size={20} className="ph-card-icon" />
+                  <div className="ph-card-content">
                     <h4>Tech Stack</h4>
-                    <div className="tech-tags">
-                      <span className="tech-tag">React</span>
-                      <span className="tech-tag">Node.js</span>
-                      <span className="tech-tag">TypeScript</span>
+                    <div className="ph-tech-tags">
+                      <span className="ph-tech-tag">React</span>
+                      <span className="ph-tech-tag">Node.js</span>
+                      <span className="ph-tech-tag">TypeScript</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Current Project Card */}
-                <div className="float-card project-cardd">
-                  <Terminal size={20} className="card-icon" />
-                  <div className="card-content">
+                <div className="ph-float-card ph-project-card">
+                  <Terminal size={20} className="ph-card-icon" />
+                  <div className="ph-card-content">
                     <h4>Current Focus</h4>
                     <p>Building AI-powered web apps</p>
-                    <div className="progress-bar">
-                      <div className="progress-fill"></div>
+                    <div className="ph-progress-bar">
+                      <div className="ph-progress-fill"></div>
                     </div>
                   </div>
                 </div>
 
                 {/* Achievement Card */}
-                <div className="float-card achievement-card">
-                  <Sparkles size={20} className="card-icon" />
-                  <div className="card-content">
+                <div className="ph-float-card ph-achievement-card">
+                  <Sparkles size={20} className="ph-card-icon" />
+                  <div className="ph-card-content">
                     <h4>Latest Achievement</h4>
                     <p>🏆 Best Project Award</p>
-                    <span className="achievement-badge">2024</span>
+                    <span className="ph-achievement-badge">2024</span>
                   </div>
                 </div>
               </div>
 
               {/* Animated Rings */}
-              <div className="animated-ring ring-1"></div>
-              <div className="animated-ring ring-2"></div>
+              <div className="ph-animated-ring ph-ring-1"></div>
+              <div className="ph-animated-ring ph-ring-2"></div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="scroll-indicator">
-        <div className="mouse">
-          <div className="wheel"></div>
+      <div className="ph-scroll-indicator">
+        <div className="ph-mouse">
+          <div className="ph-wheel"></div>
         </div>
-        <span className="scroll-text">Scroll to explore</span>
+        <span className="ph-scroll-text">Scroll to explore</span>
       </div>
 
       <style>{`
@@ -285,7 +297,7 @@ const PortfolioHero = () => {
           box-sizing: border-box;
         }
 
-        .portfolio-hero {
+        .ph-portfolio-hero {
           position: relative;
           min-height: 100vh;
           width: 100%;
@@ -296,7 +308,7 @@ const PortfolioHero = () => {
           align-items: center;
         }
 
-        .hero-canvas {
+        .ph-hero-canvas {
           position: absolute;
           top: 0;
           left: 0;
@@ -305,7 +317,7 @@ const PortfolioHero = () => {
           z-index: 1;
         }
 
-        .hero-container {
+        .ph-hero-container {
           position: relative;
           z-index: 2;
           max-width: 1800px;
@@ -313,7 +325,7 @@ const PortfolioHero = () => {
           width: 100%;
         }
 
-        .hero-grid {
+        .ph-hero-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 80px;
@@ -321,11 +333,11 @@ const PortfolioHero = () => {
         }
 
         /* Left Content */
-        .hero-left {
-          animation: fadeInLeft 0.8s ease-out;
+        .ph-hero-left {
+          animation: ph-fadeInLeft 0.8s ease-out;
         }
 
-        @keyframes fadeInLeft {
+        @keyframes ph-fadeInLeft {
           from {
             opacity: 0;
             transform: translateX(-50px);
@@ -336,14 +348,14 @@ const PortfolioHero = () => {
           }
         }
 
-        .badge-group {
+        .ph-badge-group {
           display: flex;
           gap: 15px;
           margin-bottom: 10px;
           flex-wrap: wrap;
         }
 
-        .status-badge, .verified-badge {
+        .ph-status-badge, .ph-verified-badge , .ph-freelancer-badge {
           display: inline-flex;
           align-items: center;
           gap: 8px;
@@ -352,47 +364,53 @@ const PortfolioHero = () => {
           font-size: 14px;
           font-weight: 600;
           backdrop-filter: blur(10px);
-          animation: float 3s ease-in-out infinite;
+          animation: ph-float 3s ease-in-out infinite;
         }
 
-        .status-badge {
+        .ph-status-badge {
           background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
           border: 1px solid rgba(102, 126, 234, 0.3);
           color: #a5b4fc;
         }
 
-        .verified-badge {
+        .ph-verified-badge {
           background: rgba(72, 187, 120, 0.2);
           border: 1px solid rgba(72, 187, 120, 0.3);
           color: #86efac;
         }
 
-        .badge-icon {
-          animation: pulse 2s ease-in-out infinite;
+        .ph-freelancer-badge {
+          background: rgba(161, 90, 49, 0.2);
+          border: 1px solid rgba(136, 12, 12, 0.3);
+          color: #b77cceff;
         }
 
-        @keyframes pulse {
+        .ph-badge-icon {
+          animation: ph-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes ph-pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
           50% { opacity: 0.8; transform: scale(1.1); }
         }
 
-        @keyframes float {
+        @keyframes ph-float {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-10px); }
         }
 
-        .hero-main-content {
+        .ph-hero-main-content {
           max-width: 800px;
         }
 
-        .hero-greeting {
+        .ph-hero-greeting {
           font-size: 18px;
           color: #a5b4fc;
           margin-bottom: 10px;
           font-weight: 500;
         }
 
-        .hero-name {
+        .ph-hero-name {
           font-size: 72px;
           font-weight: 900;
           line-height: 1.1;
@@ -400,64 +418,64 @@ const PortfolioHero = () => {
           letter-spacing: -2px;
         }
 
-        .name-text {
+        .ph-name-text {
           background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
 
-        .cursor-blink {
+        .ph-cursor-blink {
           color: #667eea;
-          animation: blink 1s infinite;
+          animation: ph-blink 1s infinite;
         }
 
-        @keyframes blink {
+        @keyframes ph-blink {
           0%, 50% { opacity: 1; }
           51%, 100% { opacity: 0; }
         }
 
-        .hero-title {
+        .ph-hero-title {
           font-size: 48px;
           font-weight: 800;
           margin-bottom: 30px;
           line-height: 1.2;
         }
 
-        .gradient-text {
+        .ph-gradient-text {
           background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           background-size: 200% 200%;
-          animation: gradientShift 5s ease infinite;
+          animation: ph-gradientShift 5s ease infinite;
         }
 
-        @keyframes gradientShift {
+        @keyframes ph-gradientShift {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
         }
 
-        .hero-description {
+        .ph-hero-description {
           font-size: 18px;
           line-height: 1.8;
           color: #cbd5e1;
           margin-bottom: 40px;
         }
 
-        .hero-stats {
+        .ph-hero-stats {
           display: flex;
           gap: 40px;
           margin-bottom: 40px;
         }
 
-        .stat-item {
+        .ph-stat-item {
           display: flex;
           flex-direction: column;
           gap: 5px;
         }
 
-        .stat-number {
+        .ph-stat-number {
           font-size: 36px;
           font-weight: 800;
           background: linear-gradient(135deg, #667eea, #764ba2);
@@ -466,21 +484,21 @@ const PortfolioHero = () => {
           background-clip: text;
         }
 
-        .stat-label {
+        .ph-stat-label {
           font-size: 14px;
           color: #94a3b8;
           text-transform: uppercase;
           letter-spacing: 1px;
         }
 
-        .hero-cta {
+        .ph-hero-cta {
           display: flex;
           gap: 20px;
           margin-bottom: 40px;
           flex-wrap: wrap;
         }
 
-        .btn-primary, .btn-secondary {
+        .ph-btn-primary, .ph-btn-secondary {
           display: inline-flex;
           align-items: center;
           gap: 10px;
@@ -495,22 +513,22 @@ const PortfolioHero = () => {
           border: none;
         }
 
-        .btn-primary {
+        .ph-btn-primary {
           background: linear-gradient(135deg, #667eea, #764ba2);
           color: white;
           box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
         }
 
-        .btn-primary:hover {
+        .ph-btn-primary:hover {
           transform: translateY(-3px);
           box-shadow: 0 15px 50px rgba(102, 126, 234, 0.5);
         }
 
-        .btn-primary:hover .btn-icon {
+        .ph-btn-primary:hover .ph-btn-icon {
           transform: translateX(5px);
         }
 
-        .btn-shine {
+        .ph-btn-shine {
           position: absolute;
           top: 0;
           left: -100%;
@@ -520,32 +538,32 @@ const PortfolioHero = () => {
           transition: left 0.5s;
         }
 
-        .btn-primary:hover .btn-shine {
+        .ph-btn-primary:hover .ph-btn-shine {
           left: 100%;
         }
 
-        .btn-secondary {
+        .ph-btn-secondary {
           background: rgba(255, 255, 255, 0.1);
           border: 2px solid rgba(255, 255, 255, 0.2);
           color: white;
           backdrop-filter: blur(10px);
         }
 
-        .btn-secondary:hover {
+        .ph-btn-secondary:hover {
           background: rgba(255, 255, 255, 0.15);
           transform: translateY(-2px);
         }
 
-        .btn-icon {
+        .ph-btn-icon {
           transition: transform 0.3s ease;
         }
 
-        .social-links {
+        .ph-social-links {
           display: flex;
           gap: 15px;
         }
 
-        .social-link {
+        .ph-social-link {
           width: 48px;
           height: 48px;
           border-radius: 50%;
@@ -559,19 +577,28 @@ const PortfolioHero = () => {
           backdrop-filter: blur(10px);
         }
 
-        .social-link:hover {
+        .ph-social-link:hover {
           background: rgba(102, 126, 234, 0.3);
           border-color: rgba(102, 126, 234, 0.5);
           transform: translateY(-3px);
         }
 
+        .ph-fiverr-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+
         /* Right Visual */
-        .hero-right {
+        .ph-hero-right {
           position: relative;
-          animation: fadeInRight 0.8s ease-out;
+          animation: ph-fadeInRight 0.8s ease-out;
         }
 
-        @keyframes fadeInRight {
+        @keyframes ph-fadeInRight {
           from {
             opacity: 0;
             transform: translateX(50px);
@@ -582,15 +609,15 @@ const PortfolioHero = () => {
           }
         }
 
-        .visual-container {
+        .ph-visual-container {
           position: relative;
           height: 500px;
         }
 
-        .code-card {
-        margin: auto;
-        width: 600px;
-        margin-top: 170px;
+        .ph-code-card {
+          margin: auto;
+          width: 600px;
+          margin-top: 170px;
           background: rgba(17, 24, 39, 0.8);
           border-radius: 16px;
           overflow: hidden;
@@ -599,13 +626,13 @@ const PortfolioHero = () => {
           box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
-        .main-card {
+        .ph-main-card {
           position: relative;
           z-index: 2;
-          animation: float 6s ease-in-out infinite;
+          animation: ph-float 6s ease-in-out infinite;
         }
 
-        .card-header {
+        .ph-card-header {
           background: rgba(30, 41, 59, 0.8);
           padding: 15px 20px;
           display: flex;
@@ -614,66 +641,66 @@ const PortfolioHero = () => {
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .terminal-dots {
+        .ph-terminal-dots {
           display: flex;
           gap: 8px;
         }
 
-        .dot {
+        .ph-dot {
           width: 12px;
           height: 12px;
           border-radius: 50%;
         }
 
-        .dot-red { background: #ef4444; }
-        .dot-yellow { background: #f59e0b; }
-        .dot-green { background: #10b981; }
+        .ph-dot-red { background: #ef4444; }
+        .ph-dot-yellow { background: #f59e0b; }
+        .ph-dot-green { background: #10b981; }
 
-        .file-name {
+        .ph-file-name {
           color: #94a3b8;
           font-size: 14px;
           font-family: 'Monaco', monospace;
         }
 
-        .card-body {
+        .ph-card-body {
           padding: 30px;
           font-family: 'Monaco', 'Courier New', monospace;
           font-size: 16px;
           line-height: 2;
         }
 
-        .code-line {
+        .ph-code-line {
           display: flex;
           align-items: center;
           gap: 20px;
         }
 
-        .line-number {
+        .ph-line-number {
           color: #475569;
           min-width: 30px;
           text-align: right;
           user-select: none;
         }
 
-        .code-keyword {
+        .ph-code-keyword {
           color: #c084fc;
         }
 
-        .code-variable {
+        .ph-code-variable {
           color: #60a5fa;
         }
 
-        .code-string {
+        .ph-code-string {
           color: #34d399;
         }
 
-        .indent {
+        .ph-indent {
           margin-left: 20px;
           color: #cbd5e1;
         }
 
         /* Floating Cards */
-        .floating-cards {
+        .ph-floating-cards {
           position: absolute;
           width: 100%;
           height: 100%;
@@ -681,7 +708,7 @@ const PortfolioHero = () => {
           left: 0;
         }
 
-        .float-card {
+        .ph-float-card {
           position: absolute;
           background: rgba(17, 24, 39, 0.9);
           border: 1px solid rgba(255, 255, 255, 0.1);
@@ -692,41 +719,41 @@ const PortfolioHero = () => {
           transition: all 0.4s ease;
         }
 
-        .float-card:hover {
+        .ph-float-card:hover {
           transform: translateY(-10px) scale(1.05);
           box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
         }
 
-        .card-icon {
+        .ph-card-icon {
           color: #667eea;
           margin-bottom: 10px;
         }
 
-        .card-content h4 {
+        .ph-card-content h4 {
           font-size: 16px;
           margin-bottom: 10px;
           color: white;
         }
 
-        .card-content p {
+        .ph-card-content p {
           font-size: 14px;
           color: #94a3b8;
           margin-bottom: 10px;
         }
 
-        .tech-card {
+        .ph-tech-card {
           top: -140px;
           right: -30px;
-          animation: float-1 8s ease-in-out infinite;
+          animation: ph-float-1 8s ease-in-out infinite;
         }
 
-        .tech-tags {
+        .ph-tech-tags {
           display: flex;
           flex-wrap: wrap;
           gap: 8px;
         }
 
-        .tech-tag {
+        .ph-tech-tag {
           padding: 5px 12px;
           background: rgba(102, 126, 234, 0.2);
           border: 1px solid rgba(102, 126, 234, 0.3);
@@ -735,13 +762,13 @@ const PortfolioHero = () => {
           color: #a5b4fc;
         }
 
-        .project-cardd {
+        .ph-project-card {
           bottom: 10%;
           left: -120px;
-          animation: float-2 10s ease-in-out infinite;
+          animation: ph-float-2 10s ease-in-out infinite;
         }
 
-        .progress-bar {
+        .ph-progress-bar {
           width: 100%;
           height: 8px;
           background: rgba(255, 255, 255, 0.1);
@@ -750,25 +777,25 @@ const PortfolioHero = () => {
           margin-top: 10px;
         }
 
-        .progress-fill {
+        .ph-progress-fill {
           height: 100%;
           width: 70%;
           background: linear-gradient(90deg, #667eea, #764ba2);
           border-radius: 4px;
-          animation: progress 2s ease-out;
+          animation: ph-progress 2s ease-out;
         }
 
-        @keyframes progress {
+        @keyframes ph-progress {
           from { width: 0; }
         }
 
-        .achievement-card {
+        .ph-achievement-card {
           bottom: -30px;
           right: 40px;
-          animation: float-3 12s ease-in-out infinite;
+          animation: ph-float-3 12s ease-in-out infinite;
         }
 
-        .achievement-badge {
+        .ph-achievement-badge {
           display: inline-block;
           padding: 4px 12px;
           background: rgba(251, 191, 36, 0.2);
@@ -778,42 +805,41 @@ const PortfolioHero = () => {
           color: #fcd34d;
           margin-top: 10px;
         }
-          .CurrentWorking-card{
+
+        .ph-current-working-card {
           bottom: 450px;
           right: 700px;
-            animation: float-3 12s ease-in-out infinite;
-          }
+          animation: ph-float-3 12s ease-in-out infinite;
+        }
 
-          .CurrentWorking-badge {
+        .ph-current-working-badge {
           background: rgba(72, 187, 120, 0.2);
           border: 1px solid rgba(72, 187, 120, 0.3);
           color: #86efac;
           display: inline-block;
           padding: 4px 12px;
-          border: 1px solid rgba(72, 187, 120, 0.3);
           border-radius: 12px;
           font-size: 12px;
           margin-top: 10px;
         }
 
-
-        @keyframes float-1 {
+        @keyframes ph-float-1 {
           0%, 100% { transform: translateY(0) translateX(0); }
           50% { transform: translateY(-20px) translateX(10px); }
         }
 
-        @keyframes float-2 {
+        @keyframes ph-float-2 {
           0%, 100% { transform: translateY(0) translateX(0); }
           50% { transform: translateY(15px) translateX(-10px); }
         }
 
-        @keyframes float-3 {
+        @keyframes ph-float-3 {
           0%, 100% { transform: translateY(0) rotate(0deg); }
           50% { transform: translateY(-15px) rotate(5deg); }
         }
 
         /* Animated Rings */
-        .animated-ring {
+        .ph-animated-ring {
           position: absolute;
           border: 2px solid rgba(102, 126, 234, 0.2);
           border-radius: 50%;
@@ -823,30 +849,30 @@ const PortfolioHero = () => {
           pointer-events: none;
         }
 
-        .ring-1 {
+        .ph-ring-1 {
           width: 500px;
           height: 500px;
-          animation: rotate 20s linear infinite;
+          animation: ph-rotate 20s linear infinite;
         }
 
-        .ring-2 {
+        .ph-ring-2 {
           width: 650px;
           height: 650px;
-          animation: rotate-reverse 30s linear infinite;
+          animation: ph-rotate-reverse 30s linear infinite;
         }
 
-        @keyframes rotate {
+        @keyframes ph-rotate {
           from { transform: translate(-50%, -50%) rotate(0deg); }
           to { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
-        @keyframes rotate-reverse {
+        @keyframes ph-rotate-reverse {
           from { transform: translate(-50%, -50%) rotate(0deg); }
           to { transform: translate(-50%, -50%) rotate(-360deg); }
         }
 
         /* Scroll Indicator */
-        .scroll-indicator {
+        .ph-scroll-indicator {
           position: absolute;
           bottom: 40px;
           left: 50%;
@@ -858,7 +884,7 @@ const PortfolioHero = () => {
           z-index: 10;
         }
 
-        .mouse {
+        .ph-mouse {
           width: 26px;
           height: 40px;
           border: 2px solid rgba(255, 255, 255, 0.5);
@@ -866,7 +892,7 @@ const PortfolioHero = () => {
           position: relative;
         }
 
-        .wheel {
+        .ph-wheel {
           width: 4px;
           height: 8px;
           background: rgba(255, 255, 255, 0.8);
@@ -875,15 +901,15 @@ const PortfolioHero = () => {
           top: 8px;
           left: 50%;
           transform: translateX(-50%);
-          animation: scroll 1.5s ease-in-out infinite;
+          animation: ph-scroll 1.5s ease-in-out infinite;
         }
 
-        @keyframes scroll {
+        @keyframes ph-scroll {
           0% { opacity: 1; top: 8px; }
           100% { opacity: 0; top: 20px; }
         }
 
-        .scroll-text {
+        .ph-scroll-text {
           font-size: 14px;
           color: rgba(255, 255, 255, 0.6);
           font-weight: 500;
@@ -891,50 +917,51 @@ const PortfolioHero = () => {
 
         /* Responsive */
         @media (max-width: 1024px) {
-          .hero-grid {
+          .ph-grid {
             grid-template-columns: 1fr;
             gap: 60px;
           }
 
-          .hero-right {
+          .ph-hero-right {
             order: -1;
           }
 
-          .visual-container {
+
+          .ph-visual-container {
             height: 400px;
           }
 
-          .hero-name {
+          .ph-hero-name {
             font-size: 56px;
           }
 
-          .hero-title {
+          .ph-hero-title {
             font-size: 36px;
           }
         }
 
         @media (max-width: 768px) {
-          .hero-container {
-            padding: 60px 20px;
+          .ph-hero-container {
+            padding: 60px 40px;
           }
 
-          .hero-name {
+          .ph-hero-name {
             font-size: 42px;
           }
 
-          .hero-title {
+          .ph-hero-title {
             font-size: 28px;
           }
 
-          .hero-stats {
+          .ph-hero-stats {
             gap: 20px;
           }
 
-          .stat-number {
+          .ph-stat-number {
             font-size: 28px;
           }
 
-          .hero-cta {
+          .ph-hero-cta {
             flex-direction: column;
           }
 
@@ -943,11 +970,11 @@ const PortfolioHero = () => {
             justify-content: center;
           }
 
-          .float-card {
+          .ph-float-card {
             transform: scale(0.85);
           }
 
-          .animated-ring {
+          .ph-animated-ring {
             display: none;
           }
         }
