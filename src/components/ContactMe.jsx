@@ -65,19 +65,19 @@ const ContactPage = () => {
     {
       icon: Mail,
       title: 'Email',
-      content: 'yasiru@example.com',
-      link: 'mailto:yasiru@example.com'
+      content: 'a.y.n.aththanayaka@gmail.com',
+      link: 'mailto:a.y.n.aththanayaka@gmail.com'
     },
     {
       icon: Phone,
       title: 'Phone',
-      content: '+94 77 123 4567',
-      link: 'tel:+94771234567'
+      content: '+94 76 287 3746',
+      link: 'tel:+94762873746'
     },
     {
       icon: MapPin,
-      title: 'Location',
-      content: 'Negombo, Sri Lanka',
+      title: 'Baththaramulla',
+      content: 'Colombo, Sri Lanka',
       link: null
     },
     {
@@ -92,7 +92,7 @@ const ContactPage = () => {
     { icon: Github, href: 'https://github.com', label: 'GitHub', color: '#333' },
     { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn', color: '#0077B5' },
     { icon: Twitter, href: 'https://twitter.com', label: 'Twitter', color: '#1DA1F2' },
-    { icon: Globe, href: 'https://portfolio.com', label: 'Portfolio', color: '#667eea' }
+    { icon: Globe, href: 'https://yasirunadeeshaaththanayaka.netlify.app/', label: 'Portfolio', color: '#667eea' }
   ];
 
   return (

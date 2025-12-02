@@ -44,48 +44,48 @@ const AboutMe = () => {
     { name: 'TypeScript', level: 88, category: 'Language', color: '#3178c6' },
     { name: 'Python', level: 85, category: 'Language', color: '#3776ab' },
     { name: 'MongoDB', level: 87, category: 'Database', color: '#47a248' },
-    { name: 'PostgreSQL', level: 82, category: 'Database', color: '#336791' },
+    { name: 'Java', level: 82, category: 'Database', color: '#336791' },
     { name: 'Docker', level: 80, category: 'DevOps', color: '#2496ed' },
     { name: 'AWS', level: 78, category: 'Cloud', color: '#ff9900' }
   ];
 
   const experiences = [
     {
-      role: 'Senior Full Stack Developer',
-      company: 'Tech Innovations Inc.',
-      period: '2022 - Present',
+      role: 'Full Stack Developer',
+      company: 'Cloude99X',
+      period: '2024 - Present',
       description: 'Leading development of enterprise web applications and mentoring junior developers.',
       achievements: ['Built microservices architecture', 'Improved performance by 40%', 'Led team of 5 developers']
     },
     {
       role: 'Full Stack Developer',
-      company: 'Digital Solutions Ltd.',
-      period: '2020 - 2022',
+      company: 'Genious Soft Pvt Ltd',
+      period: '2022 - 2023',
       description: 'Developed and maintained multiple client projects using modern web technologies.',
       achievements: ['Delivered 15+ projects', 'Implemented CI/CD pipeline', 'Reduced bugs by 60%']
-    },
-    {
-      role: 'Frontend Developer',
-      company: 'Creative Web Studio',
-      period: '2019 - 2020',
-      description: 'Created responsive and interactive user interfaces for various web applications.',
-      achievements: ['Built 20+ responsive websites', 'Improved UX scores', 'Collaborated with design team']
     }
+    
   ];
 
   const education = [
     {
-      degree: 'B.Sc. in Computer Science',
-      institution: 'University of Technology',
-      period: '2015 - 2019',
+      degree: 'BEng Software Engineering',
+      institution: 'University of Westminster',
+      period: '2020 - 2024',
       gpa: '3.8/4.0',
       highlights: ['Dean\'s List', 'Best Final Year Project', 'Programming Club President']
     },
     {
       degree: 'AWS Certified Solutions Architect',
       institution: 'Amazon Web Services',
-      period: '2021',
+      period: '2023',
       highlights: ['Professional Level', 'Cloud Architecture', 'System Design']
+    },
+    {
+      degree: 'Professional certificate of Machine Learning',
+      institution: 'Informatic Institute of Technology',
+      period: '2025',
+      highlights: ['Professional Level', 'KNN', 'Deep Learning']
     }
   ];
 
@@ -132,12 +132,12 @@ const AboutMe = () => {
               <div className="profile-stats">
                 <div className="stat-boxx">
                   <Trophy size={24} className="stat-iconn" />
-                  <span className="stat-valuee">50+</span>
+                  <span className="stat-valuee">30+</span>
                   <span className="stat-labell">Projects Completed</span>
                 </div>
                 <div className="stat-boxx">
                   <Users size={24} className="stat-iconn" />
-                  <span className="stat-valuee">30+</span>
+                  <span className="stat-valuee">25+</span>
                   <span className="stat-labell">Happy Clients</span>
                 </div>
                 <div className="stat-boxx">

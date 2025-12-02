@@ -1,5 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, ExternalLink, Github, Calendar, Users, Award, Heart, Code2, Sparkles, CheckCircle2, Play, Download, Monitor, Smartphone, Globe, Lock, TrendingUp, Activity, Camera, Music, MapPin, Bell, DollarSign, MessageCircle } from 'lucide-react';
+// Import Wedding Desktop Screenshots
+import weddingHero from '../assets/Wedding/Hero.png';
+import vendors from '../assets/Wedding/vendors.png';
+import adminPortal from '../assets/Wedding/adminPortal.png';
+import testimonials from '../assets/Wedding/says.png';
+import successStories from '../assets/Wedding/wedstory.png';
+import weddingTrends from '../assets/Wedding/trends.png';
+import winterWedding from '../assets/Wedding/winter.png';
+import summerWedding from '../assets/Wedding/Summer.png';
+import springWedding from '../assets/Wedding/Spring.png';
+import autumnWedding from '../assets/Wedding/Autumn.png';
+
+// Import Wedding Mobile Screenshots
+import mobile01 from '../assets/Wedding/01.png';
+import mobile02 from '../assets/Wedding/02.png';
+import mobile03 from '../assets/Wedding/03.png';
+import mobile04 from '../assets/Wedding/04.png';
+import mobile05 from '../assets/Wedding/05.png';
+import mobile06 from '../assets/Wedding/06.png';
+import mobile07 from '../assets/Wedding/07.png';
+import mobile08 from '../assets/Wedding/08.png';
+import mobile09 from '../assets/Wedding/09.png';
+import mobile10 from '../assets/Wedding/10.png';
+import mobile11 from '../assets/Wedding/11.png';
+import mobile12 from '../assets/Wedding/12.png';
+import mobile13 from '../assets/Wedding/13.png';
+import mobile14 from '../assets/Wedding/14.png';
+import mobile15 from '../assets/Wedding/15.png';
+import mobile16 from '../assets/Wedding/16.png';
+import mobile17 from '../assets/Wedding/17.png';
+import mobile18 from '../assets/Wedding/18.png';
 
 const WeddingProjectDetail = () => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -73,62 +104,62 @@ const scrollThumbnails = (direction, ref) => {
  const webScreenshots = [
   {
     id: 1,
-    title: 'Wedding Website Hero',
-    url: '/src/assets/Wedding/hero.png',
-    description: 'Elegant hero section showcasing wedding planning services with captivating visuals and call-to-action'
+    title: 'Wedding Planning Platform Hero',
+    url: weddingHero,
+    description: 'Main landing page featuring elegant wedding planning services and vendor showcase'
   },
   {
     id: 2,
     title: 'Vendors',
-    url: '/src/assets/Wedding/vendors.png',
+    url: vendors,
     description: 'Comprehensive directory of wedding vendors including photographers, caterers, venues, and decorators'
   },
   {
     id: 3,
     title: 'Admin Portal',
-    url: '/src/assets/Wedding/adminPortal.png',
+    url: adminPortal,
     description: 'Administrative dashboard for managing vendors, bookings, users, and platform analytics'
   },
   {
     id: 4,
     title: 'Testimonials',
-    url: '/src/assets/Wedding/says.png',
+    url: testimonials,
     description: 'Customer testimonials and reviews highlighting successful wedding planning experiences'
   },
   {
     id: 5,
     title: 'Success Stories',
-    url: '/src/assets/Wedding/wedstory.png',
+    url: successStories,
     description: 'Real couples sharing their wedding journey and experiences with the platform'
   },
   {
     id: 6,
     title: 'Wedding Trends',
-    url: '/src/assets/Wedding/trends.png',
+    url: weddingTrends,
     description: 'Latest wedding trends, themes, color palettes, and style inspirations for modern celebrations'
   },
   {
     id: 7,
     title: 'Winter Season Wedding Planning',
-    url: '/src/assets/Wedding/winter.png',
+    url: winterWedding,
     description: 'Winter-themed wedding ideas featuring cozy venues, seasonal decor, and cold-weather planning tips'
   },
   {
     id: 8,
     title: 'Summer Season Wedding Planning',
-    url: '/src/assets/Wedding/Summer.png',
+    url: summerWedding,
     description: 'Summer wedding inspiration with outdoor venues, bright florals, and warm-weather celebration ideas'
   },
   {
     id: 9,
     title: 'Spring Season Wedding Planning',
-    url: '/src/assets/Wedding/Spring.png',
+    url: springWedding,
     description: 'Spring wedding themes featuring blooming gardens, pastel colors, and fresh seasonal arrangements'
   },
   {
     id: 10,
     title: 'Autumn Season Wedding Planning',
-    url: '/src/assets/Wedding/Autumn.png',
+    url: autumnWedding,
     description: 'Fall wedding concepts with rich colors, rustic venues, and harvest-inspired decorations'
   }
 ];
@@ -137,109 +168,109 @@ const mobileScreenshots = [
   {
     id: 1,
     title: 'Mobile Home',
-    url: '/src/assets/Wedding/01.png',
+    url: mobile01,
     description: 'Mobile home screen with quick access to vendors, planning tools, and upcoming wedding tasks'
   },
   {
     id: 2,
     title: 'Sign In page',
-    url: '/src/assets/Wedding/02.png',
+    url: mobile02,
     description: 'Secure login interface for couples to access their personalized wedding planning dashboard'
   },
   {
     id: 3,
     title: 'Sign Up Page',
-    url: '/src/assets/Wedding/03.png',
+    url: mobile03,
     description: 'Registration page for new users to create their wedding planning account and profile'
   },
   {
     id: 4,
     title: 'Vendors Page',
-    url: '/src/assets/Wedding/04.png',
+    url: mobile04,
     description: 'Mobile vendor browsing interface with categories and search filters for easy discovery'
   },
   {
     id: 5,
     title: 'Florist page',
-    url: '/src/assets/Wedding/05.png',
+    url: mobile05,
     description: 'Browse florists and floral designers with portfolios, pricing, and availability information'
   },
   {
     id: 6,
     title: 'Florist Details',
-    url: '/src/assets/Wedding/06.png',
+    url: mobile06,
     description: 'Detailed florist profile showing services, gallery, reviews, and booking options'
   },
   {
     id: 7,
     title: 'Photographer page',
-    url: '/src/assets/Wedding/07.png',
+    url: mobile07,
     description: 'Explore wedding photographers with portfolio previews, packages, and client testimonials'
   },
   {
     id: 8, 
     title: 'Photographer Details',
-    url: '/src/assets/Wedding/08.png',
+    url: mobile08,
     description: 'Complete photographer profile with full portfolio, pricing packages, and contact information'
   },
   {
     id: 9,
     title: 'Entertainment page',
-    url: '/src/assets/Wedding/09.png',
+    url: mobile09,
     description: 'Find DJs, bands, and entertainment services for your wedding celebration'
   },
   {
     id: 10,
     title: 'Entertainment Details',
-    url: '/src/assets/Wedding/10.png',
+    url: mobile10,
     description: 'Detailed entertainment vendor profile with music samples, equipment, and performance details'
   },
   {
     id: 11,
     title: 'Vehicle page',
-    url: '/src/assets/Wedding/11.png',
+    url: mobile11,
     description: 'Browse wedding transportation options including luxury cars, vintage vehicles, and limousines'
   },
   {
     id: 12,
     title: 'Vehicle Details',
-    url: '/src/assets/Wedding/12.png',
+    url: mobile12,
     description: 'Vehicle rental details with photos, specifications, pricing, and availability calendar'
   },
   {
     id: 13,
     title: 'Dressing page',
-    url: '/src/assets/Wedding/13.png',
+    url: mobile13,
     description: 'Discover bridal boutiques, groom attire, and wedding fashion services'
   },
   {
     id: 14,
     title: 'Dressing Details',
-    url: '/src/assets/Wedding/14.png',
+    url: mobile14,
     description: 'Bridal shop profile showcasing dress collections, fitting services, and designer information'
   },
   {
     id: 15,
     title: 'Locations',
-    url: '/src/assets/Wedding/15.png',
+    url: mobile15,
     description: 'Browse wedding venues and ceremony locations with photos and capacity information'
   },
   {
     id: 16,
     title: 'Location Details',
-    url: '/src/assets/Wedding/16.png',
+    url: mobile16,
     description: 'Venue details including amenities, floor plans, catering options, and booking availability'
   },
   {
     id: 17,
     title: 'Payment',
-    url: '/src/assets/Wedding/17.png',
+    url: mobile17,
     description: 'Secure payment screen for vendor bookings and service deposits'
   },
   {
     id: 18,
     title: 'Payment Methods',
-    url: '/src/assets/Wedding/18.png',
+    url: mobile18,
     description: 'Select payment method including credit cards, digital wallets, and bank transfers'
   }
 ];

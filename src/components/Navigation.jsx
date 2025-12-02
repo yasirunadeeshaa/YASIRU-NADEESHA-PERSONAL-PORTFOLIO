@@ -39,9 +39,9 @@ const PremiumNavigation = () => {
     { id: 'home', label: 'Home', icon: Home },
     { id: 'about', label: 'About', icon: User },
     { id: 'projects', label: 'Projects', icon: Briefcase },
-    { id: 'contact', label: 'Contact', icon: Mail },
     { id: 'skills', label: 'Skills', icon: FileText },
-    { id: 'testimonials', label: 'Testimonials', icon: Users }
+    { id: 'testimonials', label: 'Testimonials', icon: Users },
+    { id: 'contact', label: 'Contact', icon: Mail }
   ];
 
   const socialLinks = [
@@ -56,7 +56,7 @@ const PremiumNavigation = () => {
         <div className="nav-container">
           <div className="nav-logo">
             <div className="logo-wrapper">
-              <span className="logo-text">Yasiru</span>
+              <span className="logo-text">A. Yasiru Nadeesha Aththanayaka</span>
               <div className="logo-dot"></div>
             </div>
           </div>
@@ -110,12 +110,6 @@ const PremiumNavigation = () => {
                 <Sun size={16} className="sun-icon" />
                 <Moon size={16} className="moon-icon" />
               </div>
-            </button>
-
-            <button className="nav-cta">
-              <FileText size={18} />
-              <span>Resume</span>
-              <div className="btn-shine"></div>
             </button>
 
             <button

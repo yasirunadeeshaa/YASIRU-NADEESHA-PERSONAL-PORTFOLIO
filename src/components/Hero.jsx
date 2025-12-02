@@ -147,14 +147,9 @@ const PortfolioHero = () => {
 
               {/* CTA Buttons */}
               <div className="ph-hero-cta">
-                <button className="ph-btn-primary">
+                <button className="ph-btn-secondary">
                   <span>View My Work</span>
                   <ArrowRight size={20} className="ph-btn-icon" />
-                  <div className="ph-btn-shine"></div>
-                </button>
-                <button className="ph-btn-secondary">
-                  <Download size={20} />
-                  <span>Download CV</span>
                 </button>
               </div>
 
@@ -201,7 +196,7 @@ const PortfolioHero = () => {
                   <div className="ph-code-line">
                     <span className="ph-line-number">2</span>
                     <span className="ph-indent">name: </span>
-                    <span className="ph-code-string">'Your Name'</span>,
+                    <span className="ph-code-string">'A. Yasiru Nadeesha Aththanayaka'</span>,
                   </div>
                   <div className="ph-code-line">
                     <span className="ph-line-number">3</span>
@@ -212,7 +207,7 @@ const PortfolioHero = () => {
                     <span className="ph-line-number">4</span>
                     <span className="ph-indent">skills: [</span>
                     <span className="ph-code-string">'React'</span>,{' '}
-                    <span className="ph-code-string">'Node.js'</span>],
+                    <span className="ph-code-string">'Spring Boot'</span>],
                   </div>
                   <div className="ph-code-line">
                     <span className="ph-line-number">5</span>
@@ -335,6 +330,7 @@ const PortfolioHero = () => {
         /* Left Content */
         .ph-hero-left {
           animation: ph-fadeInLeft 0.8s ease-out;
+          padding-top: 100px;
         }
 
         @keyframes ph-fadeInLeft {
@@ -353,6 +349,7 @@ const PortfolioHero = () => {
           gap: 15px;
           margin-bottom: 10px;
           flex-wrap: wrap;
+          padding-bottom: 20px;
         }
 
         .ph-status-badge, .ph-verified-badge , .ph-freelancer-badge {
