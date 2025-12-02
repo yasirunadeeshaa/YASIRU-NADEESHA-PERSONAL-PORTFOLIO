@@ -1,6 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Github, Calendar, Users, Award, Zap, Code2, Sparkles, CheckCircle2, Play, Download, Monitor, Smartphone, Globe, Lock, TrendingUp, Activity, FileText, MessageSquare, Bell, Shield, Building2, Key, BadgeCheck } from 'lucide-react';
+// Import all images
+import doctor1 from '../assets/doctor1.jpg';
+import heroImg from '../assets/Health/Hero.png';
+import doctorDashboard from '../assets/Health/doctordashboard.png';
+import doctorAnalytics from '../assets/Health/doctoranalytics.png';
+import calendarImg from '../assets/Health/calendar.png';
+import myPatient from '../assets/Health/mypatient.png';
+import goals from '../assets/Health/goals.png';
+import booking from '../assets/Health/booking.png';
+import accessPage from '../assets/Health/access page.png';
+import services from '../assets/Health/services.png';
+import reviewRating from '../assets/Health/reviewand rating.png';
+import vendors from '../assets/Health/vendors.png';
+import vitalAnalyse from '../assets/Health/vitalanalyse.png';
 
 const HealthcareProjectDetail = () => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -149,73 +163,73 @@ const screenshots = [
     {
       id: 1,
       title: 'Healthcare Website',
-      url: '/src/assets/Health/Hero.png',
+      url: heroImg,
       description: 'Modern landing page showcasing healthcare services with intuitive navigation and hero section'
     },
     {
       id: 2,
       title: 'Doctor Dashboard',
-      url: '/src/assets/Health/doctordashboard.png',
+      url: doctorDashboard,
       description: 'Comprehensive overview of appointments, patient statistics, and daily schedule for healthcare providers'
     },
     {
       id: 3,
       title: 'Doctor Analytics',
-      url: '/src/assets/Health/doctoranalytics.png',
+      url: doctorAnalytics,
       description: 'Advanced analytics displaying patient trends, consultation metrics, and performance insights'
     },
     {
       id: 4,
       title: 'Doctor Schedule Calendar',
-      url: '/src/assets/Health/calendar.png',
+      url: calendarImg,
       description: 'Interactive calendar for managing appointments, availability, and scheduling consultations'
     },
     {
       id: 5,
       title: 'Doctors My Patients',
-      url: '/src/assets/Health/mypatient.png',
+      url: myPatient,
       description: 'Complete patient management interface with medical history, records, and treatment plans'
     },
     {
       id: 6,
       title: 'Health Goals',
-      url: '/src/assets/Health/goals.png',
+      url: goals,
       description: 'Patient health goal tracking system with progress visualization and milestone achievements'
     },
     {
       id: 7,
       title: 'Booking Dashboard',
-      url: '/src/assets/Health/booking.png',
+      url: booking,
       description: 'Seamless appointment booking interface with doctor selection and time slot availability'
     },
     {
       id: 8,
       title: 'Access Settings',
-      url: '/src/assets/Health/access page.png',
+      url: accessPage,
       description: 'Role-based access control panel for managing user permissions and security settings'
     },
     {
       id: 9,
       title: 'Health Nexus Services',
-      url: '/src/assets/Health/services.png',
+      url: services,
       description: 'Comprehensive overview of healthcare services, specializations, and medical offerings'
     },
     {
       id: 10,
       title: 'Review and Rating',
-      url: '/src/assets/Health/reviewand rating.png',
+      url: reviewRating,
       description: 'Patient feedback system displaying doctor ratings, reviews, and testimonials'
     },
     {
       id: 11,
       title: 'HealthNexus Vendors',
-      url: '/src/assets/Health/vendors.png',
+      url: vendors,
       description: 'Vendor management portal for pharmacies, laboratories, and hospital partnerships'
     },
     {
       id: 12,
       title: 'Vital Signs Analytics Dashboard',
-      url: '/src/assets/Health/vitalanalyse.png',
+      url: vitalAnalyse,
       description: 'Real-time vital signs monitoring with interactive graphs and health trend analysis'
     }
   ];
@@ -314,7 +328,7 @@ const screenshots = [
         </div>
 
         <img 
-          src="/src/assets/doctor1.jpg" 
+          src={doctor1}
           alt="Healthcare Professional" 
           className="hpd-hero-image"
         />
